@@ -1,0 +1,81 @@
+:root {
+    --accent-color: #fe8707;
+    --bg-color: black;
+    --fg-color: white;
+}
+
+body {
+    color: var(--fg-color);
+    background-color: var(--bg-color);
+    font-size: 1.1em;
+    font-family: monospace;
+}
+
+.app_box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+.app_button {
+    display: grid;
+    color: var(--accent-color);
+    background-color: var(--bg-color);
+    padding: 1em;
+    margin: 1em;
+    border: 0.2em solid var(--accent-color);
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 20em;
+    text-decoration: none;
+}
+
+.app_button img {
+    grid-column: 1;
+    grid-row: 1;
+    width: 15em;
+    margin: 1em;
+}
+
+.img_hover {
+    opacity: 0;
+}
+
+.app_button:hover{
+    animation-name: app_button_hover;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.app_button:hover .img_hover {
+    animation-name: fade_in;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes app_button_hover {
+    from {
+	color: var(--accent-color);
+	background-color: var(--bg-color);
+	border: 2px solid var(--accent-color);
+    }
+    to {
+	color: var(--bg-color);
+	background-color: var(--accent-color);
+	border: 2px solid var(--bg-color);
+    }
+}
+
+@keyframes fade_in {
+    from {
+	opacity: 0;
+    }
+    to {
+	opacity: 1;
+    }
+}
